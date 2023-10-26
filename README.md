@@ -1,8 +1,10 @@
 # WESTERN GOVERNOR UNIVERSITY 
 ## D287 – JAVA FRAMEWORKS
-C.  Changed title, headers and buttons to reflect my choice of store, a custom guitar shop.  
+C.  Changed title on line 14, headers on lines 19 and 53 and button on line 67 to reflect my choice of store, a custom guitar shop.  
 
-D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+D.  Created new html file called about.html.  Added header that says "About" on line 5. Added header on line 8 and paragraph of text on lines 10 & 11. 
+Created AboutController for navigation to the about page. 
+Added a link on the about page back to the main page on line 18, and a link to the about page from the mainscreen page on line 20.
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
