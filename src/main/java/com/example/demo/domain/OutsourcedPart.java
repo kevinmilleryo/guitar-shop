@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("2")
 public class OutsourcedPart extends Part{
-String companyName;
+    String companyName;
 
     public OutsourcedPart() {
     }
@@ -25,3 +25,4 @@ String companyName;
         this.companyName = companyName;
     }
 }
+

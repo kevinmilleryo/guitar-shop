@@ -22,8 +22,8 @@ import java.util.List;
 
 @Controller
 public class MainScreenControllerr {
-   // private final PartRepository partRepository;
-   // private final ProductRepository productRepository;'
+    // private final PartRepository partRepository;
+    // private final ProductRepository productRepository;'
 
     private PartService partService;
     private ProductService productService;
@@ -46,14 +46,10 @@ public class MainScreenControllerr {
         List<Part> partList=partService.listAll(partkeyword);
         theModel.addAttribute("parts",partList);
         theModel.addAttribute("partkeyword",partkeyword);
-    //    theModel.addAttribute("products",productService.findAll());
+        //    theModel.addAttribute("products",productService.findAll());
         List<Product> productList=productService.listAll(productkeyword);
         theModel.addAttribute("products", productList);
         theModel.addAttribute("productkeyword",productkeyword);
         return "mainscreen";
-    }
-    @GetMapping("/about")
-    public String about() {
-        return "about";
     }
 }
