@@ -30,3 +30,4 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
     Added unit tests for maximum and minimum fields in PartTest class (lines 160-178)
 
 J.  Remove the class files for any unused validators in order to clean your code.
+    Removed DeletePartsValidator as it was not being used.  
