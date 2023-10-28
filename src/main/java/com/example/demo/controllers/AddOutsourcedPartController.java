@@ -43,13 +43,17 @@ public class AddOutsourcedPartController {
         if(bindingResult.hasErrors()){
             return "OutsourcedPartForm";
         }
-        if (!part.isInvValid()) {
-            theModel.addAttribute("invError", "Inventory must be between Minimum and Maximum values.");
-            return "InhousePartForm"; // Return the form with an error message
-        }
+//        if (!part.isInvValid()) {
+//            theModel.addAttribute("inv", "Inventory must be between Minimum and Maximum values.");
+//            return "OutsourcedPartForm"; // Return the form with an error message
+//        }
         if (part.getInv() < part.getMin()) {
-            bindingResult.rejectValue("inv", "error", "Inventory is below minimum");
-            return "InhousePartForm";
+            bindingResult.rejectValue("min", "error", "Inventory is below minimum");
+            return "OutsourcedPartForm";
+        }
+        if (part.getInv() > part.getMax()) {
+            bindingResult.rejectValue("max", "error", "Inventory is above maximum");
+            return "OutsourcedPartForm";
         }
         else{
         OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);

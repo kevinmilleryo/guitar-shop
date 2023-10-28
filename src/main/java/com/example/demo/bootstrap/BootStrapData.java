@@ -80,7 +80,7 @@ public class BootStrapData implements CommandLineRunner {
             tuner.setCompanyName("Tuner's R Us");
             tuner.setName("Guitar Tuner");
             tuner.setInv(8);
-            tuner.setPrice(20.00);
+            tuner.setPrice(20.0);
             tuner.setMax(50);
             tuner.setMin(10);
 //            tuner.setId(100L);

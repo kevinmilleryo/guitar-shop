@@ -30,7 +30,7 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
-    @Max(value = 100, message = "Maximum value must be less than or equal to 100")
+    @Max(value = 500, message = "Maximum value must be less than or equal to 500")
     private Integer max;
 
     @Min(value = 0, message = "Minimum value must be positive")
@@ -44,10 +44,12 @@ public abstract class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv) {
+    public Part(String name, double price, int inv, Integer min, Integer max) {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.min = min;
+        this.max = max;
     }
 
     public Part(long id, String name, double price, int inv) {
@@ -127,6 +129,7 @@ public abstract class Part implements Serializable {
 
         return id == part.id;
     }
+
 
     @Override
     public int hashCode() {
