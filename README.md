@@ -23,9 +23,8 @@ G.  Modified Part.java with min and max fields (lines 33-37) and getter and sett
     Verified that all of these implementations were working properly.
 
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
-•  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
-•  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
-•  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+    Added validation logic to AddInhousePartController (lines 45-51) and AddOutSourcedPartController (lines 46-53).  
+    Added validation logic to AddProductController (lines 54-58).
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 

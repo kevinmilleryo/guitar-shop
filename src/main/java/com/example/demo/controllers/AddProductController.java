@@ -51,6 +51,12 @@ public class AddProductController {
     @PostMapping("/showFormAddProduct")
     public String submitForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model theModel) {
         theModel.addAttribute("product", product);
+        for (Part p : product.getParts()) {
+            if (p.getInv() - product.getInv() < p.getMin()) {
+                bindingResult.rejectValue("inv", "error", "Inventory of associated part is below the minimum");
+                return "productForm";
+            }
+        }
 
         if(bindingResult.hasErrors()){
             ProductService productService = context.getBean(ProductServiceImpl.class);
@@ -102,6 +108,7 @@ public class AddProductController {
         for(Part p: partService.findAll()){
             if(!theProduct.getParts().contains(p))availParts.add(p);
         }
+
         theModel.addAttribute("availparts",availParts);
         //send over to our form
         return "productForm";
