@@ -27,5 +27,6 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
     Added validation logic to AddProductController (lines 54-58).
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+    Added unit tests for maximum and minimum fields in PartTest class (lines 160-178)
 
 J.  Remove the class files for any unused validators in order to clean your code.
