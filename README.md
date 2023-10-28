@@ -8,10 +8,10 @@ Added a link on the about page back to the main page on line 18, and a link to t
 
 E.  Added conditional to check that inventory is empty at line 58 in BootStrapData.java.  Added samples parts and product on lines 59-129.
 
-F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
-•  The “Buy Now” button must be next to the buttons that update and delete products.
-•  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
-•  Display a message that indicates the success or failure of a purchase.
+F.  Added buy now button next to update button on main page (lines 83-88) with post functionality, passing productId through the form.
+    Created new html templates for buySuccess and buyFailure.  Added method decrementInventory in ProductService interface (line 20).
+    Implemented decrementInventory method in ProductServiceImpl file (lines 69-79).
+    Added and implemented BuyNowController, BuySuccessController, and BuyFailureController.
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
