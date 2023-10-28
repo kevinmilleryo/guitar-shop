@@ -61,6 +61,8 @@ public class BootStrapData implements CommandLineRunner {
             body.setName("Guitar Body");
             body.setInv(10);
             body.setPrice(100.0);
+            body.setMax(50);
+            body.setMin(5);
 //            body.setId(100L);
             outsourcedPartRepository.save(body);
 
@@ -69,6 +71,8 @@ public class BootStrapData implements CommandLineRunner {
             neck.setName("Guitar Neck");
             neck.setInv(10);
             neck.setPrice(40.0);
+            neck.setMax(75);
+            neck.setMin(10);
 //            neck.setId(100L);
             outsourcedPartRepository.save(neck);
 
@@ -77,6 +81,8 @@ public class BootStrapData implements CommandLineRunner {
             tuner.setName("Guitar Tuner");
             tuner.setInv(8);
             tuner.setPrice(20.00);
+            tuner.setMax(50);
+            tuner.setMin(10);
 //            tuner.setId(100L);
             outsourcedPartRepository.save(tuner);
 
@@ -85,6 +91,8 @@ public class BootStrapData implements CommandLineRunner {
             bridge.setName("Guitar Bridge");
             bridge.setInv(5);
             bridge.setPrice(25.0);
+            bridge.setMax(25);
+            bridge.setMin(5);
 //            bridge.setId(100L);
             outsourcedPartRepository.save(bridge);
 
@@ -93,6 +101,8 @@ public class BootStrapData implements CommandLineRunner {
             strings.setName("Guitar Strings");
             strings.setInv(5);
             strings.setPrice(20.0);
+            strings.setMax(15);
+            strings.setMin(5);
 //            strings.setId(100L);
             outsourcedPartRepository.save(strings);
 

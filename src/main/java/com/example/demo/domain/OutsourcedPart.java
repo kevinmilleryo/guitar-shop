@@ -21,6 +21,11 @@ public class OutsourcedPart extends Part{
         return companyName;
     }
 
+    @Override
+    public boolean isInvValid() {
+        return (this.getInv() >= this.getMin() && this.getInv() <= this.getMax());
+    }
+
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }

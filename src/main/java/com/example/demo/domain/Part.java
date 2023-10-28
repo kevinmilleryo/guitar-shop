@@ -3,6 +3,7 @@ package com.example.demo.domain;
 import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -28,6 +29,12 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+
+    @Max(value = 100, message = "Maximum value must be less than or equal to 100")
+    private Integer max;
+
+    @Min(value = 0, message = "Minimum value must be positive")
+    private Integer min;
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -82,6 +89,22 @@ public abstract class Part implements Serializable {
         this.inv = inv;
     }
 
+    public Integer getMax() {
+        return max;
+    }
+
+    public void setMax(Integer max) {
+        this.max = max;
+    }
+
+    public Integer getMin() {
+        return min;
+    }
+
+    public void setMin(Integer min) {
+        this.min = min;
+    }
+
     public Set<Product> getProducts() {
         return products;
     }
@@ -89,6 +112,8 @@ public abstract class Part implements Serializable {
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
+
+    public abstract boolean isInvValid();
 
     public String toString(){
         return this.name;

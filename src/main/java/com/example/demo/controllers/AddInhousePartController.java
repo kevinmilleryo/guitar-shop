@@ -42,6 +42,10 @@ public class AddInhousePartController{
         if(theBindingResult.hasErrors()){
             return "InhousePartForm";
         }
+        if (!part.isInvValid()) {
+            theModel.addAttribute("invError", "Inventory must be between Minimum and Maximum values.");
+            return "InhousePartForm"; // Return the form with an error message
+        }
         else{
         InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
         InhousePart ip=repo.findById((int)part.getId());

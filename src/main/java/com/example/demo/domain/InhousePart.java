@@ -21,6 +21,11 @@ public class InhousePart extends Part{
         return partId;
     }
 
+    @Override
+    public boolean isInvValid() {
+        return (this.getInv() >= this.getMin() && this.getInv() <= this.getMax());
+    }
+
     public void setPartId(int partId) {
         this.partId = partId;
     }
